@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Image Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Image Generator</h1>
+    </header>
+    <section id="main">
+        <p>
+            <ul>
+                <li>Bitte Landschaft im vorgegebenen "spacy" Ausgabeformat in das untere Textfeld eingeben.</li>
+                <li>Dann "Generiere Bild" drücken und SVG-/PNG-Bilder der Karte als Ergebnis erhalten.</li>
+            </ul>
+            <ul>
+                <li>Durch Drücken von "Beispielkarte" wird die Landschaft vom Aufgabenblatt eingefügt.</li>
+                <li>Durch Drücken von "Textlöschung" wird das Textfeld komplett geleert.</li>
+            </ul>
+        </p>
+        <form action="#" id="input-form">
+            <textarea id="input-area"></textarea>
+            <br />
+            <input type="submit" value="Generiere Bild">
+            <input type="button" onclick="insertExample()" value="Beispielkarte">
+            <input type="button" onclick="deleteArea()" value="Textlöschung">
+        </form>
+
+        <ul style="list-style: none;">
+            <li><a id="imageSVGwhite" style="display:none;">Download SVG</a></li>
+            <li><a id="imagePNGwhite" style="display:none;">Download PNG</a><br /><br /></li>
+        </ul>
+        <ul style="list-style: none;">
+            <li><a id="imageSVGgray"  style="display:none;">Download SVG (mit grauen "*" Kacheln)</a></li>
+            <li><a id="imagePNGgray"  style="display:none;">Download PNG (mit grauen "*" Kacheln)</a></li>
+        </ul>
+
+        <div id="svg" style="display:none;"></div>
+        <canvas id="canvas" height="2048" width="2048"></canvas>
+
+    </section>
+
+    <script type="text/javascript" src="images.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+</body>
+</html>

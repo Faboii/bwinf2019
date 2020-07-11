@@ -11,7 +11,18 @@ def get_information_for_processing():
 
 
 def convert_file_data_to_usable_data(file_data):
+    file_data = remove_spaces_and_empty_elements_from_list(file_data)
+    CONSUMPTION_PER_KM_PER_100_KM = float(file_data[0])
+    CONSUMPTION_PER_KM = CONSUMPTION_PER_KM_PER_100_KM / 100
+    TANK_SIZE = float(file_data[1])
+    INITIAL_FILLING = float(file_data[2])
+    TOTAL_DISTANCE = float(file_data[3])
 
+    DISTANCES_FROM_START_OF_OIL_STATIONS = []
+    OIL_STATIONS_PRICE_PER_LITER = []
+    for element in file_data[5:]:
+        splitted_element = element.split(" ")
+        splitted_element = remove_spaces_and_empty_elements_from_list(splitted_element)
         DISTANCES_FROM_START_OF_OIL_STATIONS.append(int(splitted_element[0]))
         OIL_STATIONS_PRICE_PER_LITER.append(int(splitted_element[1]))
     return CONSUMPTION_PER_KM, TANK_SIZE, INITIAL_FILLING, TOTAL_DISTANCE, DISTANCES_FROM_START_OF_OIL_STATIONS, OIL_STATIONS_PRICE_PER_LITER

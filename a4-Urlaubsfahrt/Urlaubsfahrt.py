@@ -36,7 +36,7 @@ def remove_spaces_and_empty_elements_from_list(untidy_list):
     return tidied_data
 
 def get_data_from_file():
-    with open("/home/fabi/1_2/Development/SublimeProjects/Dev_Python/BWInf_2019/Urlaubsfahrt/beispieldaten/fahrt1.txt", "r") as file:
+    with open("/beispieldaten/fahrt1.txt", "r") as file:
         file_as_string = file.read()
 
     file_as_list = file_as_string.split("\n")
